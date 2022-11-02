@@ -35,7 +35,14 @@ while True:
 
 
     elif(choice==3):
-      print("search book selected")
+        print("search book selected")
+        category = input("enter the category name: ")
+        sql = "SELECT `id`, `name`, `category`, `author`, `charge` FROM `books` WHERE `category` ='"+category+"'"
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+        print(result)
+
+
     elif(choice==4):
       print("update book selected")
     elif(choice==5):
