@@ -84,5 +84,13 @@ while True:
 
     elif(choice==8):
         print("display the book details where bok name starting character contain")
+        letter = input("enter the letter to search: ")
+        sql = "SELECT `name`, `category`, `author`, `charge` FROM `books` WHERE `name` like '"+letter+"%'"
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+        for i in result:
+         print(i)
+
+
     elif(choice==9):
         break
