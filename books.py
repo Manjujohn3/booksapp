@@ -76,6 +76,12 @@ while True:
 
     elif(choice==7):
       print("display the total number of books in each category of book table")
+      sql = 'SELECT COUNT(*),category from books GROUP BY category'
+      mycursor.execute(sql)
+      result = mycursor.fetchall()
+      for i in result:
+       print(i)
+
     elif(choice==8):
         print("display the book details where bok name starting character contain")
     elif(choice==9):
